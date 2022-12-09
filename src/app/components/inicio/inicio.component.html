@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-lg-4 offset-lg-4">
+        <h2 class="titulo">IMC CALCULATOR</h2>
+    
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="fondoItem " [ngClass]="{'sexoDesactivo': sexo === 'Masculino'}">
+                <div class="contenedor" style="cursor: pointer;" (click)="masculino()">
+                    <i class="fa fa-male sexo" aria-hidden="true "></i>
+                    <p>Masculino</p> 
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="fondoItem " [ngClass]="{'sexoDesactivo': sexo === 'Femenino'}">
+                <div class="contenedor" style="cursor: pointer;" (click)="femenino()">
+                    <i class="fa fa-female sexo" aria-hidden="true"></i>
+                    <p>Femenino</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="fondoItem ">
+                    <div class="contenedor">
+                    <P>Altura</P>
+                    <div class="estiloNumero">{{altura}}
+                        <span class="cm">cm</span>
+                    </div>
+                    <input type="range" (input)="cambiarAltura($event)"
+                    [value]="altura" min="120" max="220" class="form-range">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="fondoItem">
+                    <div class="contenedor">
+                        <p>Peso</p>
+                        <div class="estiloNumero">
+                           {{peso}}
+                        </div>
+                        <div>
+                            <i class="fa fa-minus sumaResta" aria-hidden="true"(click)="peso= peso -1"></i>
+                            <i class="fa fa-plus sumaResta" aria-hidden="true" (click)="peso= peso + 1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="fondoItem">
+                    <div class="contenedor">
+                        <p>Edad</p>
+                        <div class="estiloNumero">
+                           {{edad}}
+                        </div>
+                        <div>
+                            <i class="fa fa-minus sumaResta" aria-hidden="true"(click)="edad= edad -1"></i>
+                            <i class="fa fa-plus sumaResta" aria-hidden="true" (click)="edad= edad + 1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <button (click)="calcularIMC()" class=" btn-color btn btn-primary btn-lg btn-block">
+                    CALCULAR
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
